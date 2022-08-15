@@ -1,0 +1,11 @@
+[package]
+name = "tablier"
+version = "0.1.0"
+edition = "2021"
+authors = ["toast <toast@mailfence.com>"]
+description = "A printing library"
+license = "MIT OR Apache-2.0"
+documentation = "n/a"
+homepage = "n/a"
+
+[dependencies]
