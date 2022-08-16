@@ -8,4 +8,7 @@ license = "MIT OR Apache-2.0"
 documentation = "https://github.com/traumatism/tablier"
 homepage = "https://github.com/traumatism/tablier"
 
+[lib]
+name = "tablier"
+
 [dependencies]
