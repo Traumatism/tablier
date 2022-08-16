@@ -48,24 +48,20 @@ pub struct Panel {
 impl Panel {
     pub fn render(&self) -> String {
         if !&self.content.contains("\n") {
+            let line = self
+                .panel_box
+                .horizontal
+                .to_string()
+                .repeat(self.content.len() + 2);
+
             let line_t = format!(
                 "{}{}{}",
-                self.panel_box.top_left,
-                self.panel_box
-                    .horizontal
-                    .to_string()
-                    .repeat(self.content.len() + 2),
-                self.panel_box.top_right,
+                self.panel_box.top_left, line, self.panel_box.top_right,
             );
 
             let line_b = format!(
                 "{}{}{}",
-                self.panel_box.bottom_left,
-                self.panel_box
-                    .horizontal
-                    .to_string()
-                    .repeat(self.content.len() + 2),
-                self.panel_box.bottom_right,
+                self.panel_box.bottom_left, line, self.panel_box.bottom_right,
             );
 
             return format!(
@@ -77,14 +73,13 @@ impl Panel {
         let lines = self.content.split('\n').collect::<Vec<&str>>();
 
         let max_l = lines.iter().map(|l| l.len()).max().unwrap();
+        let line = self.panel_box.horizontal.to_string().repeat(max_l + 2);
 
         let mut output = String::new();
 
         output.push_str(&format!(
             "{}{}{}\n",
-            self.panel_box.top_left,
-            self.panel_box.horizontal.to_string().repeat(max_l + 2),
-            self.panel_box.top_right,
+            self.panel_box.top_left, line, self.panel_box.top_right,
         ));
 
         for l in lines {
@@ -99,10 +94,9 @@ impl Panel {
 
         output.push_str(&format!(
             "{}{}{}\n",
-            self.panel_box.bottom_left,
-            self.panel_box.horizontal.to_string().repeat(max_l + 2),
-            self.panel_box.bottom_right,
+            self.panel_box.bottom_left, line, self.panel_box.bottom_right,
         ));
+
         output
     }
 }
