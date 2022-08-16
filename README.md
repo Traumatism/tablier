@@ -1,6 +1,11 @@
-mod panel;
-use panel::Panel;
-use panel::PanelBox;
+# tablier
+
+### A little Rust library for creating panels
+
+### Example
+
+```rust
+use panel::{Panel, PanelBox};
 
 fn main() {
     println!(
@@ -21,3 +26,4 @@ fn main() {
         .render()
     );
 }
+```

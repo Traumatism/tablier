@@ -9,3 +9,4 @@ documentation = "https://github.com/traumatism/tablier"
 homepage = "https://github.com/traumatism/tablier"
 
 [dependencies]
+regex = "1.6.0"
