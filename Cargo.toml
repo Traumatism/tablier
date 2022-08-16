@@ -1,6 +1,6 @@
 [package]
 name = "tablier"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["toast <toast@mailfence.com>"]
 description = "A printing library"
@@ -9,4 +9,3 @@ documentation = "https://github.com/traumatism/tablier"
 homepage = "https://github.com/traumatism/tablier"
 
 [dependencies]
-regex = "1.6.0"
